@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Article>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Teste Danilo Novaes</h1>
+</div>
+<br />
+<div class="row col-md-12  divRowItens " id="painel" >
+     @foreach (var item in Model)
+    {
+        <h5 class="card-title">@item.Author</h5>
+        <h1 class="display-6">@item.Title</h1>
+        <p class="lead">
+            @item.Description
+        </p>
+        <p class="text-start">@item.PublishedAt</p>
+        <figure class="figure">
+            <img src="@item.UrlToImage" class="rounded float-start" style="width:200px;height:200px">
+            
+        </figure>
+        <a href="@item.Url" class="text-decoration-none">@item.Url</a>
+        <hr />
+        <br />
+       
+        }
+</div>
